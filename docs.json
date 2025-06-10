@@ -1,21 +1,105 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Docs",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
     "dark": "#15803D"
   },
   "description": "",
+  "icons": {
+    "library": "lucide"
+  },
+  "name": "Docs",
   "navigation": {
-    "groups": [
+    "dropdowns": [
       {
-        "group": "Getting Started",
-        "pages": [
-          "index"
+        "dropdown": "BACnet MCP Server",
+        "description": "Operate BAS/BMS systems",
+        "icon": "building",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "bacnet-mcp/introduction",
+              "bacnet-mcp/installation"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "bacnet-mcp/properties",
+              "bacnet-mcp/prompts",
+              "bacnet-mcp/authentication"
+            ]
+          },
+          {
+            "group": "Examples",
+            "pages": [
+              "bacnet-mcp/openai",
+              "bacnet-mcp/openai-agents"
+            ]
+          }
+        ]
+      },
+      {
+        "dropdown": "Modbus MCP Server",
+        "description": "Control Modbus devices",
+        "icon": "cpu",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "modbus-mcp/introduction",
+              "modbus-mcp/installation"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "modbus-mcp/registers",
+              "modbus-mcp/prompts",
+              "modbus-mcp/authentication"
+            ]
+          },
+          {
+            "group": "Examples",
+            "pages": [
+              "modbus-mcp/openai",
+              "modbus-mcp/openai-agents"
+            ]
+          }
+        ]
+      },
+      {
+        "dropdown": "MQTT MCP Server",
+        "description": "Connect to IoT networks",
+        "icon": "network",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "mqtt-mcp/introduction",
+              "mqtt-mcp/installation"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "mqtt-mcp/messages",
+              "mqtt-mcp/prompts",
+              "mqtt-mcp/authentication"
+            ]
+          },
+          {
+            "group": "Examples",
+            "pages": [
+              "mqtt-mcp/openai",
+              "mqtt-mcp/openai-agents"
+            ]
+          }
         ]
       }
     ]
-  }
+  },
+  "theme": "maple"
 }
