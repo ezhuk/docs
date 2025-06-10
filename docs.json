@@ -74,7 +74,30 @@
         "dropdown": "MQTT MCP Server",
         "description": "Connect to IoT networks",
         "icon": "network",
-        "pages": []
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "mqtt-mcp/introduction",
+              "mqtt-mcp/installation"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "mqtt-mcp/messages",
+              "mqtt-mcp/prompts",
+              "mqtt-mcp/authentication"
+            ]
+          },
+          {
+            "group": "Examples",
+            "pages": [
+              "mqtt-mcp/openai",
+              "mqtt-mcp/openai-agents"
+            ]
+          }
+        ]
       }
     ]
   },
