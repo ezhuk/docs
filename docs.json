@@ -13,6 +13,21 @@
   "navigation": {
     "dropdowns": [
       {
+        "dropdown": "Astro Hash",
+        "description": "Secure Astro websites",
+        "icon": "file-lock",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "astro-hash/introduction",
+              "astro-hash/installation",
+              "astro-hash/quickstart"
+            ]
+          }
+        ]
+      },
+      {
         "dropdown": "BACnet MCP Server",
         "description": "Operate BAS/BMS systems",
         "icon": "building",
