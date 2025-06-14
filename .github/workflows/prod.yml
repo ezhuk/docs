@@ -1,0 +1,33 @@
+# prod.yml
+
+name: prod
+
+on:
+  workflow_dispatch:
+    inputs:
+      repos:
+        default: "astro-hash,bacnet-mcp,modbus-mcp,mqtt-mcp"
+        required: true
+      folder:
+        default: "docs"
+        required: true
+
+jobs:
+  build:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          if [[ ! -f docs.json ]]; then
+            echo "ERROR: could not find docs.json"
+            exit 1
+          fi
+          sudo apt-get install -y jq rsync
+          set -euo pipefail
+          IFS=',' read -ra REPOS <<< "${{ github.event.inputs.repos }}"
+          for repo in "${REPOS[@]}"; do
+            echo "$repo"
+          done
