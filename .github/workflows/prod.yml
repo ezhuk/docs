@@ -3,14 +3,10 @@
 name: prod
 
 on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
   workflow_dispatch:
-    inputs:
-      repos:
-        default: "astro-hash,bacnet-mcp,modbus-mcp,mqtt-mcp"
-        required: true
-      folder:
-        default: "docs"
-        required: true
 
 jobs:
   build:
@@ -21,13 +17,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          if [[ ! -f docs.json ]]; then
-            echo "ERROR: could not find docs.json"
-            exit 1
-          fi
-          sudo apt-get install -y jq rsync
-          set -euo pipefail
-          IFS=',' read -ra REPOS <<< "${{ github.event.inputs.repos }}"
-          for repo in "${REPOS[@]}"; do
-            echo "$repo"
-          done
+          cat <<EOF > .vale.ini
+          [formats]
+          mdx = md
+
+          [*.mdx]
+          CommentDelimiters = {/*, */}
+
+          TokenIgnores = (?sm)((?:import|export) .+?$), \
+          (?<!`)(<\w+ ?.+ ?\/>)(?!`), \
+          (<[A-Z]\w+>.+?<\/[A-Z]\w+>)
+
+          BlockIgnores = (?sm)^(<\w+\n .*\s\/>)$, \
+          (?sm)^({.+.*})
+          EOF
+      - uses: errata-ai/vale-action@v2
+        with:
+          fail_on_error: false
+          files: '["astro-hash", "bacnet-mcp", "modbus-mcp", "mqtt-mcp"]'
