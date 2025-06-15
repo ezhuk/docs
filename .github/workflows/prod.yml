@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [main]
     types: [opened, synchronize]
-  workflow_dispatch:
 
 jobs:
   build:
@@ -34,4 +33,3 @@ jobs:
       - uses: errata-ai/vale-action@v2
         with:
           fail_on_error: false
-          files: '["astro-hash", "bacnet-mcp", "modbus-mcp", "mqtt-mcp"]'
