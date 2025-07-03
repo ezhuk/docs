@@ -1,6 +1,6 @@
-# prod.yml
+# test.yml
 
-name: prod
+name: test
 
 on:
   pull_request:
@@ -15,6 +15,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+      - run: |
+          npm i -g mint
+          mint broken-links
       - run: |
           cat <<EOF > .vale.ini
           [formats]
