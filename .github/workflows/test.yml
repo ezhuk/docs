@@ -1,0 +1,42 @@
+# test.yml
+
+name: test
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+          cache: 'npm'
+      - run: |
+          npm i -g mint
+          mint broken-links
+      - run: |
+          cat <<EOF > .vale.ini
+          [formats]
+          mdx = md
+
+          [*.mdx]
+          CommentDelimiters = {/*, */}
+
+          TokenIgnores = (?sm)((?:import|export) .+?$), \
+          (?<!`)(<\w+ ?.+ ?\/>)(?!`), \
+          (<[A-Z]\w+>.+?<\/[A-Z]\w+>)
+
+          BlockIgnores = (?sm)^(<\w+\n .*\s\/>)$, \
+          (?sm)^({.+.*})
+          EOF
+      - uses: errata-ai/vale-action@v2
+        with:
+          fail_on_error: false
