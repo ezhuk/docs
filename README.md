@@ -1,5 +1,7 @@
 ## Project Documentation
 
+[![test](https://github.com/ezhuk/docs/actions/workflows/test.yml/badge.svg)](https://github.com/ezhuk/docs/actions/workflows/test.yml)
+
 This repository contains the source files for project documentation built with [Mintlify](https://mintlify.com).
 
 ## Getting Started
