@@ -51,7 +51,8 @@
             "group": "Examples",
             "pages": [
               "bacnet-mcp/openai",
-              "bacnet-mcp/openai-agents"
+              "bacnet-mcp/openai-agents",
+              "bacnet-mcp/pydanticai"
             ]
           }
         ]
@@ -80,7 +81,8 @@
             "group": "Examples",
             "pages": [
               "modbus-mcp/openai",
-              "modbus-mcp/openai-agents"
+              "modbus-mcp/openai-agents",
+              "modbus-mcp/pydanticai"
             ]
           }
         ]
@@ -109,7 +111,8 @@
             "group": "Examples",
             "pages": [
               "mqtt-mcp/openai",
-              "mqtt-mcp/openai-agents"
+              "mqtt-mcp/openai-agents",
+              "mqtt-mcp/pydanticai"
             ]
           }
         ]
