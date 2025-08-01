@@ -116,6 +116,20 @@
             ]
           }
         ]
+      },
+      {
+        "dropdown": "PineText Assistant",
+        "description": "Reason over documents",
+        "icon": "file-search",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "pinetext/introduction",
+              "pinetext/installation"
+            ]
+          }
+        ]
       }
     ]
   },
