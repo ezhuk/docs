@@ -36,6 +36,6 @@ jobs:
           BlockIgnores = (?sm)^(<\w+\n .*\s\/>)$, \
           (?sm)^({.+.*})
           EOF
-      - uses: errata-ai/vale-action@v2
+      - uses: errata-ai/vale-action@v3
         with:
           fail_on_error: false
