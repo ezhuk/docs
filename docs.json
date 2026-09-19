@@ -58,6 +58,19 @@
         ]
       },
       {
+        "dropdown": "Bazel Registry",
+        "description": "Manage dependencies",
+        "icon": "blocks",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "bazel-registry/introduction"
+            ]
+          }
+        ]
+      },
+      {
         "dropdown": "Modbus MCP Server",
         "description": "Control Modbus devices",
         "icon": "cpu",
