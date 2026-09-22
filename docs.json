@@ -71,6 +71,19 @@
         ]
       },
       {
+        "dropdown": "Dev Container Features",
+        "description": "Manage environments",
+        "icon": "container",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "devcontainer-features/introduction"
+            ]
+          }
+        ]
+      },
+      {
         "dropdown": "Modbus MCP Server",
         "description": "Control Modbus devices",
         "icon": "cpu",
