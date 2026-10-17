@@ -158,6 +158,19 @@
         ]
       },
       {
+        "dropdown": "Warp Server",
+        "description": "Connect Things",
+        "icon": "galaxy",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "warp/introduction"
+            ]
+          }
+        ]
+      },
+      {
         "dropdown": "Wrap Framework",
         "description": "Build web services",
         "icon": "shell",
